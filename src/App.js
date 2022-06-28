@@ -11,7 +11,7 @@ function App() {
 		<GithubProvider>
 			<div className='flex flex-col justify-between h-screen'>
 				<Navbar />
-				<main className='container mx-auto'>
+				<main className='container mx-auto px-2'>
 					<Routes>
 						<Route path='/' element={<Home />} />
 						<Route path='/home' element={<Home />} />

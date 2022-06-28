@@ -2,7 +2,7 @@ import React from "react";
 
 function Spinner() {
 	return (
-		<div class='text-center'>
+		<div class='text-center py-10'>
 			<svg
 				role='status'
 				class='inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600'

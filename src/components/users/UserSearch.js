@@ -6,10 +6,12 @@ import GithubContext from "../../context/github/GithubContext";
 function UserSearch(props) {
 	const [text, setText] = useState("");
 
-	const { users, dispatch, clearUsers } = useContext(GithubContext);
+	const { users, dispatch } = useContext(GithubContext);
 	const { setAlert } = useContext(AlertContext);
 
 	const handleChange = e => setText(e.target.value);
+
+	const clearUsers = () => dispatch({ type: "CLEAR_USERS" });
 
 	const handleSubmit = async e => {
 		e.preventDefault();

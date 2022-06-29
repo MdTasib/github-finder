@@ -3,13 +3,16 @@ import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa";
 import { useParams, Link } from "react-router-dom";
 import GithubContext from "../context/github/GithubContext";
 import Spinner from "../components/layout/Spinner";
+import RepoList from "../components/repos/RepoList";
 
 function User() {
 	const params = useParams();
-	const { user, getUser, loading } = useContext(GithubContext);
+	const { user, repos, getUser, getUserRepos, loading } =
+		useContext(GithubContext);
 
 	useEffect(() => {
 		getUser(params.login);
+		getUserRepos(params.login);
 	}, [params.login]);
 
 	const {
@@ -157,7 +160,7 @@ function User() {
 					</div>
 				</div>
 
-				{/* <RepoList repos={repos} /> */}
+				<RepoList repos={repos} />
 			</div>
 		</>
 	);
